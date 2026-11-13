@@ -1,0 +1,44 @@
+name: Build Native Flutter Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Flutter Stable SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install ImageMagick for Brand App Icon
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick
+
+      - name: Build Native Flutter Release APK
+        run: bash build.sh
+
+      - name: Publish Production Flutter APK to Releases
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v1.0.0
+          name: "Production Flutter APK v1.0.0"
+          files: dist/*.apk
+          draft: false
+          prerelease: false
