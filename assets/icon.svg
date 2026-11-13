@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700" />
+      <stop offset="100%" style="stop-color:#10B981" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="512" height="512" fill="url(#backgroundGradient)" rx="116"/>
+  <g transform="translate(0, 0)">
+    <!-- Main Pulse/Heartbeat shape -->
+    <path d="M150 256 L200 206 L256 286 L312 186 L362 256 L412 206 L362 306 L312 236 L256 336 L200 236 L150 256 Z" fill="#FFFFFF" opacity="0.8" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="round"/>
+    <!-- Overlapping XI (Roman numeral 11) geometric shapes -->
+    <rect x="180" y="150" width="30" height="200" fill="#FFFFFF" opacity="0.9"/>
+    <rect x="230" y="150" width="30" height="200" fill="#FFFFFF" opacity="0.9" transform="rotate(20 245 250)"/>
+    <rect x="280" y="150" width="30" height="200" fill="#FFFFFF" opacity="0.9" transform="rotate(-20 295 250)"/>
+    <rect x="330" y="150" width="30" height="200" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+</svg>
